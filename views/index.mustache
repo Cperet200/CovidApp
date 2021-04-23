@@ -1,0 +1,85 @@
+<html>
+<head>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+ <script defer src="/js/util.js"></script>
+ <script defer src="/js/index.js"></script>
+    </head>
+</html>
+<title>{{title}}</title>
+  <body onload="FetchAllData()">
+
+  {{>partials/header}}
+    <div class="wrapper">
+      
+      <div class="row">
+        <div class="country_select col-md-12">
+          <select class="form-control" id="drop-down">
+            <option selected value="world wide">World Wide</option>
+            
+          </select>
+        </div>
+        <div class="col-md-7">
+        <div class="cases-cards">
+          <div class="card text-white bg-primary mb-3" id="total" style="max-width: 18rem;">
+            <div class="card-header">Total Cases</div>
+            <div class="card-body">
+              <h5 class="card-title">+0k</h5>
+              <p class="card-text">Total:0k</p>
+            </div>
+          </div>
+    
+          <div class="card text-white bg-danger mb-3" id="death" style="max-width: 18rem;">
+            <div class="card-header">Total Deaths</div>
+            <div class="card-body">
+              <h5 class="card-title">+0k</h5>
+              <p class="card-text">Total:0k</p>
+            </div>
+          </div>
+    
+          <div class="card text-white bg-info mb-3" id="recover" style="max-width: 18rem;">
+            <div class="card-header">Recoverd</div>
+            <div class="card-body">
+              <h5 class="card-title">+0k</h5>
+              <p class="card-text">Total:0k</p>
+            </div>
+          </div>
+        </div>
+        <div class="map">
+          <div id="map"></div>
+        </div>
+        </div>
+        <div class="col-md-5">
+          <div class="app_right">
+            <div id="tabble">
+              <table id="countriesData" class="col-md-12 table-striped table-condensed cf">
+              <tbody>
+               
+              </tbody>
+            </table>
+          </div>
+
+          <div class="canva">
+            <canvas id="canvas"></canvas>
+          </div>
+
+          <div class="pie-chart">
+            <canvas id="pie-chart"></canvas>
+          </div>
+          
+          </div>
+         
+        
+        </div>
+       </div>
+    </div>
+   
+ </body>
+</html>
